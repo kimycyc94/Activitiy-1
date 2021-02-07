@@ -472,7 +472,7 @@ body {
     }
     
     .contact-info {
-        font-size: 2em;                                         /*컨텍트 글크기*/
+        font-size: 1.5em;                                         /*컨텍트 글크기*/
         display: flex;
         flex-flow: row;
         justify-content: space-between;
