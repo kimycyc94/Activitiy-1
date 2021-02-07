@@ -7,14 +7,17 @@
 
 body {
     background-color: rgb(240, 240, 240);
-    height: 100vh;
+    height: 100%;
 }
 
 .main-body {
     margin-top: 2px;
     display: flex;
-    /*border: 1px solid #a0a0a0;*/ /*for debugging*/
-    font-family: 'Inconsolata', monospace;
+    flex-flow: column wrap;                                /*메인바디 플렉스 크기*/
+    /*border: 1px solid red; *//*for debugging*/
+    
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
     font-size: 1.2em;
 }
 
@@ -26,16 +29,19 @@ body {
     width: 100%;
 }
 .navbar-brand {
-    font-size: 1.2em;
+    font-size: 1em;                            
     float: left;
     display: flex;
     justify-content: baseline;
     align-items: baseline;
     font-family: 'Montserrat', sans-serif;
 }
+.navbar-brand img {
+    width: 40px;                                 /*기타로고 크기*/
+}
 
-.navbar-brand h2 {
-    font-size: 2.5em;
+.navbar-brand h2 {                               /*킴스뮤직 크기*/
+    font-size: 2em;
 }
 
 .navbar-dark {
@@ -65,6 +71,11 @@ body {
     margin-right: 2em;
 }
 
+#bolder {
+    color: rgb(192, 248, 204);
+    font-weight: bold;
+}
+
 /*************************Index.html*************************/
 .home-container {
     display: flex;
@@ -74,8 +85,7 @@ body {
     /*border: 1px solid red;*/
 }
 .carousel-inner > .carousel-item > img {
-    height: 25em;
-    
+    height: 15em;                                     /*앨범크기*/
 }
 .home-container2 {
     /*border: 1px solid orange;*/
@@ -91,20 +101,21 @@ body {
     display: flex;
     flex-flow: column;
     margin-bottom: 3em;
+    
 }
 #welcome-h2{
     display: flex;
     justify-content: center;
     font-family: 'Montserrat', sans-serif;
-    font-size: 3em;
+    font-size: 1.5em;                          /*웰컴글 크기*/
     color: rgb(225, 224, 233);
     background-color: #000000;
     margin-bottom: .2em;
     margin-left: 7px;
-    margin-right: 5px;
+    margin-right: 7px;
 }
-.synopsis {
-    font-size: 1.5em;
+.synopsis {                                   
+    font-size: 1.1em;                         /*시놉시스 글크기*/
     padding-left: 25px;
     padding-right: 20px;
     font-family: 'Poppins', sans-serif;
@@ -112,21 +123,26 @@ body {
 #main-2 {
     /*border: 1px solid blue;*/
     background-color: #eeeeee;
-    margin-top: 2em;
+    margin-top: 0em;                           /*메인2 마진크기*/
+    padding-left: 0px;                         /*메인2 좌우페딩크기*/
+    padding-right: 0px;
     width: 100%;
     height: auto;
     display: grid;
     align-items: baseline;    
     grid-area: main-2;
     grid-gap: 2%;
-    grid-template-columns: 32% 32% 32%;
-    grid-template-areas: "bottom-1 bottom-2 bottom-3";
+    /*grid-template-columns: 32% 32% 32%;*/
+    grid-template-rows: 32% 32% 32% ;
+    grid-template-areas:  bottom-1
+                          bottom-2
+                          bottom-3
     /*max-width: 100%;
     max-height: 100%;*/
 }
 .button {
     text-align: center;
-    font-size: 2em;
+    font-size: 1.2em;                               /*버튼 폰트크기*/
     color: #fcfcfc;
     background-color:#000000;
     font-family: 'Oswald', sans-serif;
@@ -138,236 +154,116 @@ body {
     font-weight: bolder;
 }
 
-.home-container3 {
-    padding-top: 10px;
-    font-size: 1.5em;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    align-items: center;
+/*************************Common features for instrument pages*************************/
+.picture-shell {
+    flex-flow: column wrap;
+}
+
+.main-body h2{
     font-family: 'Oswald', sans-serif;
-    background-color: #f0f0f0;
-}
-#instar, #facebook {
-    color: #292828;
-}
-#instar:hover, #facebook:hover {
     font-weight: bold;
-    text-decoration: none;
-}
-/*************************about.html*************************/
-.my-pic {
-    margin-top: 5px;
-    margin-bottom: auto;
-    display: flex;
-    justify-content: space-evenly;
-    max-width: 100%;
-    max-height: 100%;
-}
-.content-about {
-    padding-top: 10px;
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: space-between;
-}
-.story {
-    /*border: 1px solid blue;*/
-    display: flex;
-    margin-top: 5px;
-    margin-left: 5px;
-    flex-flow: column wrap;
-}
-.story h2 {
-    color: #4e4e4e;
-    background-color: #ececec;
-    font-family: 'Hachi Maru Pop', cursive;
-    font-size: 2em;
-    align-items: center;
-    font-weight: bolder;
-    margin-left: 5px;
-}
-.hr-line {
-    font-weight: bolder;
-    color:#4e4e4e;
-    margin-left: 5px;
-}
-.contact-info {
-    margin-left: 5px;
-    margin-bottom: 5px;
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
-    color:#4e4e4e;
-}
-#contact-list {
-    list-style-type: none;
-}
-.networks a{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    display: inline;
-}
-#facebook {
-    margin-left: 60px;
-}
-#instar:hover {
-    background-color: #e9e9e9;
-    border-radius: 100%;
-}
-#facebook:hover {
-    background-color: #e9e9e9;
-    border-radius: 100%;
+    text-align: center;
+    padding-bottom: 5px;
+    font-size: 2.2em;
+    color: rgb(225, 224, 233);
+    background-color: #000000;
+    margin-left: 7px;
+    margin-right: 7px;
 }
 
-/*************************portfolio.html*************************/
-.port-container {
-    height: 100%;
-    /*background-color: green;*/
-    display: grid;
-    align-items: center;
-    grid-gap: 5px;
-    grid-template-columns: 33% 33% 33%;
-    grid-template-rows: 3% 32% 32% 32%;
-    grid-template-areas:"port-intro port-intro port-intro"
-                        "pic-1 pic-2 pic-3"
-                        "pic-4 pic-5 pic-6"
-                        "pic-7 pic-8 pic-9"
-}
-.port-container div {
-    height: 100%;
-    background-color:#ececec;
-    border-radius: 5%;
-}
-#port-intro {
-    grid-area: port-intro;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family:'Hachi Maru Pop', cursive;
-    background-color: #ececec;
-}
-#port-intro h2 {
-    font-size: 1em;
-    font-weight: bolder;
-    color: #4e4e4e;
-}
-.port-pics {
-    max-width: 100%;
-    max-height: 100%;
-}
-#pic-1 {
-    grid-area: pic-1;
-}
-#pic-2 {
-    grid-area: pic-2;
-}
-#pic-3 {
-    grid-area: pic-3;
-}
-#pic-4 {
-    grid-area: pic-4;
-}
-#pic-5 {
-    grid-area: pic-5;
-}
-#pic-6 {
-    grid-area: pic-6;
-}
-#pic-7 {
-    grid-area: pic-7;
-}
-#pic-8 {
-    grid-area: pic-8;
-}
-#pic-9 {
-    grid-area: pic-9;
+.picture-shell div {
+    margin-bottom: 2.5em;
+    margin-left: 5%;
+    width: 90%;
 }
 
+.picture-shell div img{
+    border: 1px solid rgb(0, 0, 0);
+}
 
-/*************************reviews.html*************************/
-.review-container {
-    display: flex;
+.picture-shell div p{
+    padding-left: 7px;
+}
+
+#price {
+    color: red;
+    font-size:larger;
+    font-style:italic;
+}
+
+/*************************Information.html*************************/
+
+.about-us-container {
     flex-flow: column wrap;
-    /*border: 1px solid #ff0303;*/
+    padding-left: 7px;
+    padding-right: 7px;
 }
-#testimonials {
-    font-family: 'Hachi Maru Pop', cursive;
-    display: flex;
-    justify-content: center;
-    background-color: #ececec;
+.about-us-container h3{
+    padding-top: 5px;
+    font-weight: bold;
 }
-#testimonials h2 {
-    font-size: 2em;
-    font-weight: bolder;
-    color: #4e4e4e;
-}
-.review-1 {
-    display: flex;
+
+.first-block {
+    margin-bottom: 1.5em;
     flex-flow: row wrap;
-   /*border: 1px solid #0400fc;*/
-}
-.review-2 {
-    display: flex;
-    flex-flow: row wrap;
-    /*border: 1px solid #0400fc;*/
-}
-.review-3 {
-    display: flex;
-    flex-flow: row wrap;
-    /*border: 1px solid #0400fc;*/
-}
-#first-1 {
-    background-color:#ececec;
-    border-radius: 5px;
-}
-#first-2 {
-    /*border: 1px solid #fc00fc;*/
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-}
-#second-1 {
-    /*border: 1px solid #2afc00;*/
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-}
-#second-2 {
-    background-color:#ececec;
-    border-radius: 5px;
-}
-#third-1 {
-    background-color:#ececec;
-    border-radius: 5px;
-}
-#third-2 {
-    /*border: 1px solid #fc00fc;*/
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-}
-#names {
-    font-weight: bolder;
-    background-color:#f1f1f1;
-    display: flex;
-    justify-content: center;
-    margin-left: 80%;
 }
 
+.second-block {
+    flex-flow: row wrap;
+}
 /*************************footer*************************/
 .footer-content {
-    margin-top: 30px;
-    padding-top: 20px;
+    padding-top: 5px;
     padding-bottom: 20px;
     color: whitesmoke;
     background-color:#050505;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
     align-items: center;
     justify-content: space-evenly;
     font-family: 'Hachi Maru Pop', cursive;
+}
+
+.footer-content img {
+    width: 25px;                                         /*컨텍트 사진크기*/
+}
+
+.contact-info {
+    font-size: 1.1em;                                         /*컨텍트 글크기*/
+    width: 100%;
+    /*border: 1px solid blue;*/
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    font-family: 'Oswald', sans-serif;
+    background-color: #050505;
+    color:#fcfcfc; 
+}
+.contact-info div{
+    width: 100%;
+    flex-flow: row wrap;
+    text-align:center;
+    margin-bottom: 5px;
+}
+
+#instar, #facebook {
+    color: #fcfcfc;
+}
+
+#instar:hover, #facebook:hover {
+    font-weight: bold;
+    color: rgb(171, 245, 187);
+    text-decoration: none;
+}
+
+.footer-link {
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.link-repo {
+    margin-top: 5px;
 }
 
 .link-repo a:hover, .link-home a:hover {
@@ -379,6 +275,206 @@ body {
     color: whitesmoke;
     text-align: center;
     font-family: 'Oswald', sans-serif;
-    font-size: 1.3em;
+    font-size: 1em;                                         /*링크 글크기*/
 }
 
+@media only screen and (max-width: 450px) {
+    body {
+     /* background-color: #F09A9D;*/
+    }
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 451px) and (max-width: 960px) {
+    body {
+        /*background-color: #F5CF8E;*/
+    }
+    /*Title*/
+    .navbar-brand img {
+        width: 60px;                                 /*기타로고 크기*/
+    }
+    
+    .navbar-brand h2 {                               /*킴스뮤직 크기*/
+        font-size: 3.5em;
+    }
+    /*Home*/
+    .carousel-inner > .carousel-item > img {
+        height: 25em;                                     /*앨범크기*/   
+    }
+    #welcome-h2{
+        font-size: 2.2em;                          /*웰컴글 크기*/
+    }
+    .synopsis {                                   
+        font-size: 1.3em;                         /*시놉시스 글크기*/
+    }
+    #main-2 {
+        grid-gap: 1%;
+        grid-template-columns: 33% 33% 33%;
+    }
+    .button {
+        font-size: 1.5em;                               /*버튼 폰트크기*/
+    }
+    /*Instrument pages*/
+    
+    .picture-shell {
+        display: flex;
+        flex-flow: row wrap;
+    }
+    .main-body {
+        flex-flow: column;
+        height: 100%;
+    }
+    .main-body h2{
+        font-family: 'Oswald', sans-serif;
+        font-weight: bold;
+        text-align: center;
+        padding-bottom: 5px;
+        font-size: 3em;
+        color: rgb(225, 224, 233);
+        background-color: #000000;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    
+    .picture-shell div {
+        margin-bottom: 3em;
+        margin-left: 1%;
+        margin-top: 1%;
+        width: 48.5%;
+        display: flex;
+        flex-flow: column;
+    }
+    
+    .picture-shell div img{
+        border: 1px solid rgb(0, 0, 0);
+    }
+    
+    .picture-shell div p{
+        padding-left: 7px;
+    }
+    
+    #price {
+        color: red;
+        font-size:larger;
+        font-style:italic;
+    }
+    /*About us*/
+    .about-us-container {
+        font-size: 1.5em;
+    }
+    .about-us-container h3{
+        font-size: 2.5em;
+    }
+    /*Footer*/
+    .footer-content img {
+        width: 25px;                                         /*컨텍트 사진크기*/
+    }
+    
+    .contact-info {
+        font-size: 1.3em;                                         /*컨텍트 글크기*/
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+    }
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 961px) {
+    body {
+      /*background-color: #B2D6FF; */
+    }
+/*Title*/
+    .navbar-brand img {
+        width: 80px;                                 /*기타로고 크기*/
+    }
+    
+    .navbar-brand h2 {                               /*킴스뮤직 크기*/
+        font-size: 5em;
+    }
+    /*Home*/
+    .carousel-inner > .carousel-item > img {
+        height: 40em;                                     /*앨범크기*/   
+    }
+    #welcome-h2{
+        font-size: 3em;                          /*웰컴글 크기*/
+    }
+    .synopsis {                                   
+        font-size: 1.5em;                         /*시놉시스 글크기*/
+    }
+    #main-2 {
+        grid-gap: 1%;
+        grid-template-columns: 33% 33% 33%;
+    }
+    .button {
+        font-size: 2em;                               /*버튼 폰트크기*/
+    }
+    /*Instrument pages*/
+    
+    .picture-shell {
+        display: flex;
+        flex-flow: row;
+    }
+    .main-body {
+        flex-flow: column;
+        height: 100%
+    }
+    .main-body h2{
+        font-family: 'Oswald', sans-serif;
+        font-weight: bold;
+        text-align: center;
+        padding-bottom: 5px;
+        font-size: 3em;
+        color: rgb(225, 224, 233);
+        background-color: #000000;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    
+    .picture-shell div {
+        margin-bottom: 3em;
+        margin-left: 1.2%;
+        margin-top: 1%;
+        width: 23.5%;
+        display: flex;
+        flex-flow: column;
+    }
+    
+    .picture-shell div img{
+        border: 1px solid rgb(0, 0, 0);
+    }
+    
+    .picture-shell div p{
+        padding-left: 7px;
+        font-size: 1.2em;
+    }
+    
+    #price {
+        color: red;
+        font-size:larger;
+        font-style:italic;
+        font-size: 1.8em;
+    }
+    /*About us*/
+    .about-us-container {
+        font-size: 1.5em;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .about-us-container h3{
+        font-size: 2.5em;
+    }
+    /*Footer*/    
+    .footer-content img {
+        width: 60px;                                         /*컨텍트 사진크기*/
+    }
+    
+    .contact-info {
+        font-size: 2em;                                         /*컨텍트 글크기*/
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+    }
+}
